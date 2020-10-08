@@ -22,6 +22,7 @@ public class CanvasActivity extends AppCompatActivity {
         //not a view
         ConstraintLayout myLayout = findViewById(R.id.ac2ConstraintLayout);
         //kinda wild how I can point to this class in the Intent Object and it just knows from getIntent()
+        //this comment is purely to try and force a noticeable change so i can push to github
         Intent myIntent = getIntent();
         //set value to IntentString (the color to parse)
         String color = myIntent.getStringExtra("color");
