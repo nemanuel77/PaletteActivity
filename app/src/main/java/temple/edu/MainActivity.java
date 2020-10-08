@@ -41,11 +41,11 @@ public class MainActivity extends AppCompatActivity {
         myGV.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                myTV.setText(colors[position]);
-//                Intent myIntent = new Intent(MainActivity.this, CanvasActivity.class);
-//                myIntent.putExtra("color", colors[position].toString());
-//
-//                startActivity(myIntent);
+                //myTV.setText(colors[position]);
+                Intent myIntent = new Intent(MainActivity.this, CanvasActivity.class);
+                myIntent.putExtra("color", colors[position].toString());
+
+                startActivity(myIntent);
 
 
             }
