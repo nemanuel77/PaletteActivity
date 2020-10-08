@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 //myTV.setText(colors[position]);
+                //test comment for commit to main branch
                 Intent myIntent = new Intent(MainActivity.this, CanvasActivity.class);
                 myIntent.putExtra("color", colors[position].toString());
 
