@@ -24,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        getSupportActionBar().setTitle("Palette Activity");
+
         myGV = findViewById(R.id.gvColorPalette);
         //myView = findViewById(R.id.Layout_Constraint);
         colors = getResources().getStringArray(R.array.gv_colors);
