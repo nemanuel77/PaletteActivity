@@ -1,17 +1,24 @@
 <resources>
     <string name="app_name">PaletteActivity</string>
+    <string name="pal_name">Palette Activity</string>
+    <string name="canv_name">Canvas Activity</string>
+
+
+
+    <string name="mainDisplay">Please select a color.</string>
+
+    <string-array name="gv_strings">
+        <item>RED</item>
+        <item>GREEN</item>
+        <item>BLUE</item>
+    </string-array>
 
     <string-array name="gv_colors">
         <item>RED</item>
         <item>GREEN</item>
         <item>BLUE</item>
-        <item>YELLOW</item>
-        <item>AQUA</item>
-        <item>PURPLE</item>
-        <item>NAVY</item>
-        <item>GRAY</item>
-        <!--        <item>OLIVE</item>-->
-        <item>FUCHSIA</item>
     </string-array>
+
+
 
 </resources>

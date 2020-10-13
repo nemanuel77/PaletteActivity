@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Activité de la palette</string>
+    <string name="pal_name">Activité de la palette</string>
+    <string name="canv_name">Activité de toile</string>
+
+
+
+    <string name="mainDisplay">Veuillez sélectionner une couleur.</string>
+
+    <string-array name="gv_strings">
+        <item>ROUGE</item>
+        <item>VERT</item>
+        <item>BLEU</item>
+
+    </string-array>
+
+    <string-array name="gv_colors">
+        <item>RED</item>
+        <item>GREEN</item>
+        <item>BLUE</item>
+    </string-array>
+
+
+
+</resources>

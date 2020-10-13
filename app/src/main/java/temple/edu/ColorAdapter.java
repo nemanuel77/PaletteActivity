@@ -18,11 +18,15 @@ public class ColorAdapter extends BaseAdapter {
 
     Context context;
     String[] colors;
+    String[] strings;
 
     //initial constructor
-    public ColorAdapter(Context context, String[] colors) {
+    public ColorAdapter(Context context, String[] colors, String[] strings) {
         this.context = context;
         this.colors = colors;
+        this.strings = strings;
+
+
 
     }
 
@@ -47,7 +51,7 @@ public class ColorAdapter extends BaseAdapter {
 
 
         //set value to textview objects
-        textView.setText(colors[position]);
+        textView.setText(strings[position]);
         textView.setBackgroundColor(Color.parseColor(colors[position]));
 
         return textView;
