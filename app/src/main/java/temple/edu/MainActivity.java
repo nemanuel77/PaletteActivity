@@ -60,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
                 //test comment for commit to main branch
                 Intent myIntent = new Intent(MainActivity.this, CanvasActivity.class);
                 myIntent.putExtra("color", colors[position].toString());
+                myIntent.putExtra("string", strings[position].toString());
 
                 startActivity(myIntent);
 

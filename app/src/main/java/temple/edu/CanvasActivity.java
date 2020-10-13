@@ -28,9 +28,11 @@ public class CanvasActivity extends AppCompatActivity {
         Intent myIntent = getIntent();
         //set value to IntentString (the color to parse)
         String color = myIntent.getStringExtra("color");
+        //addition for lab 5 to process textview in french
+        String label = myIntent.getStringExtra("string");
 
         //set text to string value and parse its color
-        tv.setText(color);
+        tv.setText(label);
         myLayout.setBackgroundColor(Color.parseColor(color));
 
 
