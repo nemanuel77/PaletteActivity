@@ -19,13 +19,14 @@ public class MainActivity extends AppCompatActivity implements PaletteFragment.g
     //initialize needed variables
     GridView myGV; //to display textviews
     View myView;
-    //String[] colors; //to define colors of the textviews
-    int[] colors;
+    String[] colors; //to define colors of the textviews
+    //int[] colors;
     String[] strings; //labels for Assignment 5
     TextView myTV; //test onSelectItem method initial run
 
     FragmentManager fm;
     CanvasFragment canvasFragment;
+    boolean FragManager;
 
 
     @Override
@@ -33,22 +34,50 @@ public class MainActivity extends AppCompatActivity implements PaletteFragment.g
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Resources res = getResources();
+
+        colors = res.getStringArray(R.array.gv_colors);
+        strings = res.getStringArray(R.array.gv_strings);
+
+
+
         fm = getSupportFragmentManager();
         canvasFragment = new CanvasFragment();
+        FragManager = findViewById(R.id.container_2) != null;
 
         fm
                 .beginTransaction()
                 .add(R.id.container_1, PaletteFragment.newInstance(
                         getResources().getStringArray(R.array.gv_colors),
                         getResources().getStringArray(R.array.gv_strings)))
-                .add(R.id.container_2, canvasFragment)
+
                 .commit();
+
+
+        if (FragManager)
+            fm
+                    .beginTransaction()
+                    .add(R.id.container_2, canvasFragment)
+                    .commit();
+
 
 
     }
 
     @Override
     public void colorSelected(int index) {
+        if(FragManager) {
+            canvasFragment.displayText(colors[index]);
+
+        }
+        else{
+            fm
+                    .beginTransaction()
+                    .replace(R.id.container_1,canvasFragment)
+                    .commit();
+            canvasFragment.displayText(colors[index]);
+        }
+
 
     }
 

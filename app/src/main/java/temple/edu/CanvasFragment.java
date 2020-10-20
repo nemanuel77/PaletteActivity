@@ -64,7 +64,7 @@ public class CanvasFragment extends Fragment {
 
     }
 
-    public void displayText(int reference){
+    public void displayText(String reference){
         myText.setText(reference);
     }
 }
