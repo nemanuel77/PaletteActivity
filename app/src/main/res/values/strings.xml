@@ -4,14 +4,16 @@
     <string name="canv_name">Canvas Activity</string>
 
 
-
     <string name="mainDisplay">Please select a color.</string>
 
     <string-array name="gv_strings">
         <item>RED</item>
         <item>GREEN</item>
         <item>BLUE</item>
-        
+        <item>ORANGE</item>
+        <item>YELLOW</item>
+        <item>PURPLE</item>
+
 
     </string-array>
 
@@ -19,8 +21,9 @@
         <item>RED</item>
         <item>GREEN</item>
         <item>BLUE</item>
+        <item>ORANGE</item>
+        <item>YELLOW</item>
+        <item>PURPLE</item>
     </string-array>
-
-
 
 </resources>

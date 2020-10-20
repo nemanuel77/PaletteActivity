@@ -17,6 +17,7 @@ public class ColorAdapter extends BaseAdapter {
 //    remains the same - set a string value and color to a textview.
 
     Context context;
+    //int[] colors;
     String[] colors;
     String[] strings;
 
@@ -52,7 +53,7 @@ public class ColorAdapter extends BaseAdapter {
 
         //set value to textview objects
         textView.setText(strings[position]);
-        textView.setBackgroundColor(Color.parseColor(colors[position]));
+        //textView.setBackgroundColor(Color.parseColor(colors[position]));
 
         return textView;
     }
