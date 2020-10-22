@@ -23,24 +23,17 @@ public class PaletteFragment extends Fragment {
     private static final String COLORS_KEY = "colors";
     private static final String STRINGS_KEY = "strings";
 
-    private String[] strings;
-    private String[] colors;
+    String[] strings;
+    String[] colors;
 
-    gvPickedInterface parentActivity;
+    View myView;
 
+    //gvPickedInterface parentActivity;
 
     public PaletteFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment PaletteFragment.
-     */
     // TODO: Rename and change types and number of parameters
     public static PaletteFragment newInstance(String[] colors, String[] strings) {
         PaletteFragment fragment = new PaletteFragment();
@@ -53,53 +46,37 @@ public class PaletteFragment extends Fragment {
     }
 
     @Override
-    public void onAttach(@NonNull Context context) {
-        super.onAttach(context);
-
-        if(context instanceof  gvPickedInterface){
-            parentActivity = (gvPickedInterface) context;
-        }
-        else{
-            throw new RuntimeException("Implement gvPickedInterface interface to attach fragment.");
-        }
-
-    }
-
-    @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-           colors = getArguments().getStringArray(COLORS_KEY);
-           strings = getArguments().getStringArray(STRINGS_KEY);
+        Bundle bundle;
+        if ((bundle = getArguments()) != null) {
+           colors = bundle.getStringArray(COLORS_KEY);
+           strings = bundle.getStringArray(STRINGS_KEY);
         }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View myView = inflater.inflate(R.layout.fragment_palette, container, false);
+//        // Inflate the layout for this fragment
+        myView = inflater.inflate(R.layout.fragment_palette, container, false);
         GridView gridView = myView.findViewById(R.id.gvMainFrag);
-
-        ColorAdapter colorAdapter = new ColorAdapter((Context) parentActivity, colors, strings);
+//
+        ColorAdapter colorAdapter = new ColorAdapter(myView.getContext(), colors, strings);
         gridView.setAdapter(colorAdapter);
-
-        //gridView.setAdapter(new ColorAdapter((Context) parentActivity, android.R.layout.simple_list_item_1, colors));
-
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                parentActivity.colorSelected(position);
+
             }
         });
+
 
 
         return myView;
     }
 
-    interface gvPickedInterface{
-        void colorSelected(int index);
-    }
+
 
 
 }

@@ -13,6 +13,9 @@
         <item>ROUGE</item>
         <item>VERT</item>
         <item>BLEU</item>
+        <item>ORANGE</item>
+        <item>JAUNE</item>
+        <item>VIOLET</item>
 
     </string-array>
 
@@ -20,6 +23,9 @@
         <item>RED</item>
         <item>GREEN</item>
         <item>BLUE</item>
+        <item>ORANGE</item>
+        <item>YELLOW</item>
+        <item>PURPLE</item>
     </string-array>
 
 

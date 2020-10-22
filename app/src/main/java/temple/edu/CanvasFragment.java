@@ -60,11 +60,12 @@ public class CanvasFragment extends Fragment {
         // Inflate the layout for this fragment
         View l = inflater.inflate(R.layout.fragment_canvas,container,false);
         myText = l.findViewById(R.id.txtFrag);
+        myText.setText(getResources().getString(R.string.canv_name));
         return l;
 
     }
 
-    public void displayText(String reference){
-        myText.setText(reference);
-    }
+//    public void displayText(String reference){
+//        myText.setText(reference);
+//    }
 }

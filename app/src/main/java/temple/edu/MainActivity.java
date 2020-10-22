@@ -14,8 +14,8 @@ import android.content.res.Resources;
 import android.widget.GridView;
 import android.widget.TextView;
 
-
-public class MainActivity extends AppCompatActivity implements PaletteFragment.gvPickedInterface {
+//implements PaletteFragment.gvPickedInterface
+public class MainActivity extends AppCompatActivity {
     //initialize needed variables
     GridView myGV; //to display textviews
     View myView;
@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity implements PaletteFragment.g
 
     FragmentManager fm;
     CanvasFragment canvasFragment;
+    PaletteFragment paletteFragment;
     boolean FragManager;
 
 
@@ -40,46 +41,24 @@ public class MainActivity extends AppCompatActivity implements PaletteFragment.g
         strings = res.getStringArray(R.array.gv_strings);
 
 
-
         fm = getSupportFragmentManager();
         canvasFragment = new CanvasFragment();
-        FragManager = findViewById(R.id.container_2) != null;
-
+        //paletteFragment = new PaletteFragment();
+        Bundle bundle = new Bundle();
+//        bundle.putStringArray(COLORS_KEY,colors);
+//        bundle.putStringArray(STRINGS_KEY,strings);
+        //paletteFragment.setArguments(bundle);
         fm
                 .beginTransaction()
-                .add(R.id.container_1, PaletteFragment.newInstance(
-                        getResources().getStringArray(R.array.gv_colors),
-                        getResources().getStringArray(R.array.gv_strings)))
-
+                .add(R.id.container_1,PaletteFragment.newInstance(colors,strings))
+                .add(R.id.container_2,canvasFragment)
                 .commit();
 
-
-        if (FragManager)
-            fm
-                    .beginTransaction()
-                    .add(R.id.container_2, canvasFragment)
-                    .commit();
-
+    }
 
 
     }
 
-    @Override
-    public void colorSelected(int index) {
-        if(FragManager) {
-            canvasFragment.displayText(colors[index]);
-
-        }
-        else{
-            fm
-                    .beginTransaction()
-                    .replace(R.id.container_1,canvasFragment)
-                    .commit();
-            canvasFragment.displayText(colors[index]);
-        }
-
-
-    }
 
 
 //        getSupportActionBar().setTitle(getResources().getString(R.string.pal_name));
@@ -116,4 +95,4 @@ public class MainActivity extends AppCompatActivity implements PaletteFragment.g
 //        });
 
 
-}
+//}
