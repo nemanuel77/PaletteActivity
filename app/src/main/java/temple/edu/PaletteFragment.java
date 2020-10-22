@@ -1,6 +1,7 @@
 package temple.edu;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -28,7 +29,7 @@ public class PaletteFragment extends Fragment {
 
     View myView;
 
-    //gvPickedInterface parentActivity;
+    gvPickedInterface parentActivity;
 
     public PaletteFragment() {
         // Required empty public constructor
@@ -67,6 +68,7 @@ public class PaletteFragment extends Fragment {
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                parentActivity.Selected(colors[position]);
 
             }
         });
@@ -75,6 +77,11 @@ public class PaletteFragment extends Fragment {
 
         return myView;
     }
+
+    public interface gvPickedInterface{
+        void Selected(String color);
+    }
+
 
 
 

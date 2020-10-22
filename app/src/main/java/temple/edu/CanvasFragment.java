@@ -1,5 +1,6 @@
 package temple.edu;
 
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -19,6 +20,7 @@ import org.w3c.dom.Text;
 public class CanvasFragment extends Fragment {
 
     TextView myText;
+    View l;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -58,12 +60,18 @@ public class CanvasFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View l = inflater.inflate(R.layout.fragment_canvas,container,false);
+        l = inflater.inflate(R.layout.fragment_canvas,container,false);
         myText = l.findViewById(R.id.txtFrag);
         myText.setText(getResources().getString(R.string.canv_name));
         return l;
 
     }
+
+    public void changeColor(String color){
+        l.setBackgroundColor(Color.parseColor(color));
+    }
+
+
 
 //    public void displayText(String reference){
 //        myText.setText(reference);
