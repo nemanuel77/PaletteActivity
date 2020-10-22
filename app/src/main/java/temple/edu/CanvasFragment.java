@@ -12,11 +12,7 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link CanvasFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class CanvasFragment extends Fragment {
 
     TextView myText;
@@ -69,6 +65,9 @@ public class CanvasFragment extends Fragment {
 
     public void changeColor(String color){
         l.setBackgroundColor(Color.parseColor(color));
+    }
+    public void changeText(String string){
+        myText.setText(string);
     }
 
 

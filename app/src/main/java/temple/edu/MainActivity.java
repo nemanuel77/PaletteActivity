@@ -59,8 +59,9 @@ public class MainActivity extends AppCompatActivity implements PaletteFragment.g
 
 
     @Override
-    public void Selected(String color) {
+    public void Selected(String color, String string) {
         canvasFragment.changeColor(color);
+        canvasFragment.changeText(string);
     }
 
 

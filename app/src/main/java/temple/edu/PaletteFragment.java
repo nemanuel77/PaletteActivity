@@ -47,6 +47,15 @@ public class PaletteFragment extends Fragment {
     }
 
     @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        if (context instanceof gvPickedInterface)
+            parentActivity = (gvPickedInterface) context;
+        else
+            throw new RuntimeException("Activity doesn't implement gvPickedInterface");
+    }
+
+    @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Bundle bundle;
@@ -68,7 +77,7 @@ public class PaletteFragment extends Fragment {
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                parentActivity.Selected(colors[position]);
+                parentActivity.Selected(colors[position], strings[position]);
 
             }
         });
@@ -79,7 +88,7 @@ public class PaletteFragment extends Fragment {
     }
 
     public interface gvPickedInterface{
-        void Selected(String color);
+        void Selected(String color, String string);
     }
 
 
